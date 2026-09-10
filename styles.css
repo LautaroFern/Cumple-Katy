@@ -1,0 +1,343 @@
+/* ===========================
+   RESET & BASE
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F5ECD7;
+  color: #3D2B1F;
+  font-family: 'Lora', serif;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(245, 236, 215, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #B8956A44;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #8B5E3C;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #C17D5A;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  background-color: #F5ECD7;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(193,125,90,0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(184,149,106,0.12) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(4rem, 12vw, 8rem);
+  color: #3D2B1F;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1.5px;
+  background-color: #B8956A;
+  margin: 0 auto 1.8rem;
+}
+
+.hero-phrase {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  color: #8B5E3C;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-footer {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hero-humor {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(0.75rem, 2vw, 0.88rem);
+  color: #B8956A;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.hero-arrow {
+  color: #C17D5A;
+  font-size: 1.1rem;
+  opacity: 0.6;
+}
+
+/* ===========================
+   SECCIONES — BASE
+=========================== */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(2rem, 6vw, 3rem);
+  color: #3D2B1F;
+  margin-bottom: 1rem;
+}
+
+.section-title.centered {
+  text-align: center;
+}
+
+/* ===========================
+   MENSAJE DE AMOR
+=========================== */
+.mensaje {
+  background-color: #FAF3E8;
+  padding: 6rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.mensaje-card {
+  max-width: 680px;
+  width: 100%;
+}
+
+.mensaje-divider {
+  width: 50px;
+  height: 1.5px;
+  background-color: #B8956A;
+  margin: 0 0 2rem;
+}
+
+.mensaje-texto {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #5C3D2A;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.mensaje-firma {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #C17D5A;
+  margin-top: 2rem;
+}
+
+/* ===========================
+   GALERÍAS
+=========================== */
+.galeria {
+  background-color: #FAF3E8;
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.galeria-alt {
+  background-color: #F5ECD7;
+}
+
+.galeria-divider {
+  width: 50px;
+  height: 1.5px;
+  background-color: #B8956A;
+  margin: 0 auto 2.5rem;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.galeria-item {
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  background-color: #E8D9C0;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.galeria-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   FRASES ENTRE FOTOS
+=========================== */
+.galeria-frase {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.galeria-frase p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  color: #8B5E3C;
+  line-height: 1.6;
+  position: relative;
+  display: inline-block;
+}
+
+.galeria-frase p::before {
+  content: '"';
+  font-size: 3rem;
+  color: #B8956A;
+  opacity: 0.4;
+  position: absolute;
+  left: -1.5rem;
+  top: -0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.galeria-frase p::after {
+  content: '"';
+  font-size: 3rem;
+  color: #B8956A;
+  opacity: 0.4;
+  position: absolute;
+  right: -1.5rem;
+  bottom: -1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+  background-color: #3D2B1F;
+  color: #FAF3E8;
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-frase {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: #F5ECD7;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+.footer-iconos {
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  color: #B8956A;
+}
+
+.footer-firma {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #C17D5A;
+}
+
+.footer-fecha {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #B8956A;
+  opacity: 0.7;
+}
+
+/* ===========================
+   ANIMACIONES FADE IN
+=========================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 600px) {
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+  }
+}
